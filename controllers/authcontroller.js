@@ -13,9 +13,12 @@ const addUser = (req,res) =>{
     const gender = req.body.gender;
     const designation = req.body.designation;
     const salary = req.body.salary;
-    // console.log(fullname,age,phonenum,mailid,password);
-    let sql = 'INSERT into empdetails (employeename, employeeid, department, dateofbirth, gender, designation, salary) VALUES ($1, $2, $3, $4, $5, $6, $7)';
-    const VALUES = [username,id,dept,dob,gender,designation,salary];
+    const contact =req.body.contact;
+    const address = req.body.address;
+    const shift = req.body.Shift;
+    console.log(username,id,dept,dob,gender,designation,salary,contact,address,shift);
+    let sql = 'INSERT into empdetails (employeename, employeeid, department, dateofbirth, gender, designation, salary, contact, address, shift) VALUES ($1, $2, $3, $4, $5, $6, $7,$8, $9, $10)';
+    const VALUES = [username,id,dept,dob,gender,designation,salary,contact,address,shift];
     db.query(sql, VALUES,(error) => {
       if (error) {
         console.log(error);
