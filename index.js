@@ -20,7 +20,7 @@ const PORT = 8000;
 
 app.use(express.json());
 
-app.use('/', require('../backend/routes/authrouter'));
+app.use('/', require('./routes/authrouter'));
 
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
